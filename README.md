@@ -32,11 +32,11 @@ a new instance will be launched.
 
 ## Troubleshooting
 
-**I am getting an ERR_NGROK_8012 error in the ngrok web interface.**  
+**I am getting ERR_NGROK_8012 error in the ngrok web interface.**  
 Is your ngrok configured correctly? Check if there is
 `~/.config/ngrok/ngrok.yml` file with your authtoken. If the file does not
 exist, run the `ngrok config add-authtoken` command.
 
-**I get the error "Failed to set webhook: Unauthorized" error.**  
+**I am getting "Failed to set webhook: Unauthorized" error.**  
 There may be a typo in your bot token. The bot token should look something like
 this `0000000000:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.
