@@ -27,6 +27,9 @@ Clone this repo, then run:
 Webhook requests will tunnel to a specified port on your local machine. The
 default is port 80.
 
+If there's already an instance of ngrok running, localbot will use it. Otherwise
+a new instance will be launched.
+
 ## Troubleshooting
 
 **I am getting an ERR_NGROK_8012 error in the ngrok web interface.**  
