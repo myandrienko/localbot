@@ -34,9 +34,9 @@ export async function stopInstance() {
     console.log("Stopping ngrok...");
     await instance.kill();
     instance = null;
+    console.log("Ngrok stopped gracefully");
   }
 
-  console.log("Ngrok stopped gracefully");
   apiReady = false;
 }
 
