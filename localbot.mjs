@@ -6,8 +6,9 @@ import * as tg from "./telegram.mjs";
 let exitCode = 0;
 
 try {
-  const token = argv._[1];
-  const port = argv.port ?? argv.p ?? 80;
+  const path = argv._[1] ?? "/";
+  const token = argv.token ?? argv.t ?? process.env.BOT_TOKEN;
+  const port = argv.port ?? argv.p ?? process.env.PORT ?? "3000";
 
   if (!token) {
     throw new Error("Missing argument: bot token");
@@ -20,7 +21,7 @@ try {
     addr: port,
   });
 
-  await tg.setBotWebhook({ token, url });
+  await tg.setBotWebhook({ token, url: `${url}${path}` });
   console.log(chalk.green("All done!"));
 
   await ngrok.waitForInstance();

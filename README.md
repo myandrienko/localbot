@@ -21,14 +21,24 @@ current working directory. The easiest way to install ngrok is to
 Clone this repo, then run:
 
 ```
-./localbot.mjs <bot_token> [-p <port>]
+./localbot.mjs [<webhook path>] -t <bot_token> [-p <port>]
 ```
 
 Webhook requests will tunnel to a specified port on your local machine. The
-default is port 80.
+default is port 3000.
 
 If there's already an instance of ngrok running, localbot will use it. Otherwise
 a new instance will be launched.
+
+### Example
+
+```
+./localbot.mjs /api/endpoint -t 0000000000:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -p 8080
+```
+
+This command runs ngrok to tunnel some random public URL (e.g.
+`https://049a-46-196-108-21.eu.ngrok.io`) to `http://localhost:8080`, then sets
+your bot's webhook URL to `https://049a-46-196-108-21.eu.ngrok.io/api/endpoint`.
 
 ## Troubleshooting
 
